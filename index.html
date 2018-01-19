@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Editors Lab 2018: Breaking News Contest</title>
+<meta name="author" content="(Adolfo Antón Bravo)"/>
+<meta name="description" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="file:///home/flow/Documentos/software/reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Herramientas de Scraping de PDF y Web.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Editors Lab 2018: Breaking News Contest</h1><h2 class="author">Adolfo Antón Bravo</h2><h2 class="date">2018-01-18 jue 00:00</h2><p class="date">Created: 2018-01-19 vie 17:05</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgd81aa09">Intro</a></li>
+<li><a href="#/slide-org88296e1">¿Recién?</a></li>
+<li><a href="#/slide-orgaa7ddc1">Quiénes somos</a></li>
+<li><a href="#/slide-org39fcf44">Qué queremos hacer</a></li>
+<li><a href="#/slide-orgd439614">¿Recieeeeeén? ¿Cómo?</a></li>
+<li><a href="#/slide-org33c936a">The Breaking News Challenge</a></li>
+<li><a href="#/slide-org06e8bcd">¿Esto es un problema actual?</a></li>
+<li><a href="#/slide-orgecfd7ca">Linked Open Data</a></li>
+<li><a href="#/slide-org2c9affe">Nube de Datos Enlazados</a>
+<ul>
+<li><a href="#/slide-org1c6b722">Linked Data 2007</a></li>
+<li><a href="#/slide-orgb84cebc">Linked Data 2017</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org0533269">Linked Data Sorces</a>
+<ul>
+<li><a href="#/slide-orgba4f83f">Newsrooms</a></li>
+<li><a href="#/slide-org39a019f">Recursos</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org0d94c00">¿Es factible?</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orgd81aa09">
+<h2 id="orgd81aa09">Intro</h2>
+<ul>
+<li>Estamos 11 equipos provenientes de medios o entidades que trabajamos con tecnologías de la información, con
+periodismo.</li>
+<li>Pretendemos montar un prototipo periodístico innovador, seguro que todos son interesantes.</li>
+<li>El nuestro lo es&#x2026;</li>
+<li>Se trata de una nueva tecnología disruptiva recién inventada: los datos vinculados.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org88296e1">
+<h2 id="org88296e1">¿Recién?</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaa7ddc1">
+<h2 id="orgaa7ddc1">Quiénes somos</h2>
+<ul>
+<li>Alejandro Zappala, cartógrafo, topógrafo, adappgeo.net</li>
+<li>María Poveda, ingeniera ontológica, ODI Madrid (Open Data Institute) y OEG-UPM.</li>
+<li>Adolfo Antón Bravo, responsable del DataLab Madrid.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org39fcf44">
+<h2 id="org39fcf44">Qué queremos hacer</h2>
+<p>
+Poner en contexto, de forma automática, aumentada, semántica, geográfica y enriquecida una noticia cualquiera.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd439614">
+<h2 id="orgd439614">¿Recieeeeeén? ¿Cómo?</h2>
+<ul>
+<li>NLP, Procesado de Lenguaje Natural (<i>Natural Language Processing</i>).</li>
+<li>ER, Reconocimiento de entidades (<i>Entity Recognition</i>).</li>
+<li>LOD, reconciliación con datos abiertos vinculados (<i>Linked Open Data</i>).</li>
+<li>JSON-LD, para la Web.</li>
+<li>GIS, sistemas de información geográfica (<i>GeoJSON</i>, <i>PostGIS</i>)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org33c936a">
+<h2 id="org33c936a">The Breaking News Challenge</h2>
+<p>
+En el libro <a href="https://books.google.es/books?id=EvoBmQcEVZAC">Excellence in Online Journalism</a>: Exploring Current Practices in an Evolving Environment, David
+A. Craig recordaba:
+</p>
+
+<blockquote nil>
+<p>
+Breaking news always stretches reporters and editors, no matter the medium, because of the time constraints it
+creates.
+</p>
+
+<p>
+In online journalism, the pressure to move quickly is particularly intense and therefore the challenges to
+excellence are great.
+</p>
+</blockquote>
+
+</section>
+</section>
+<section>
+<section id="slide-org06e8bcd">
+<h2 id="org06e8bcd">¿Esto es un problema actual?</h2>
+<blockquote nil>
+<p>
+From the early days of journalism on the web in the 1990s, the capacity of the medium for speed created new
+possibilities but also new expectations.
+</p>
+
+<p>
+In the past few yearse, the proliferation of independent blogs and
+news sites, along withe the development of social media such as Twitter, has provided even greater capacity
+for quick communication but also intensified what was already a brutal competitive battle in online news.
+</p>
+
+<p>
+The battle we are facing in trying to report and edit quickly and accurately and to go beyond basic accuracy
+to provide context and depth.
+</p>
+</blockquote>
+
+</section>
+</section>
+<section>
+<section id="slide-orgecfd7ca">
+<h2 id="orgecfd7ca">Linked Open Data</h2>
+<p>
+Los Datos Enlazados son una parte de la Web Semántica:
+</p>
+<ul>
+<li>Usar URIs para identificar las cosas, entidades, abstracciones de distintos nombres que con lenguaje natural
+se refieren a un mismo recurso.así ofrecer una forma estandar y unívoca para refererirnos a cualquier recurso.</li>
+<li>Usar URIs HTTP, para acceder.</li>
+<li>Ofrecer información sobre los recursos usando RDF, para aprovechar su potencia: triplas del tipo <code>Sujeto, Propiedad, Valor</code>
+(Sujeto, Predicado, Objeto)</li>
+<li>Incluir enlaces a otros URIs, para enlazar URIs.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org2c9affe">
+<h2 id="org2c9affe">Nube de Datos Enlazados</h2>
+<ul>
+<li>Este grafo representa a distintos conjuntos de datos de diversos tipos</li>
+<li>Están organizados mediante colores por dominios.</li>
+<li>Estos conjuntos de datos están conectados entre sí</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1c6b722">
+<h3 id="org1c6b722">Linked Data 2007</h3>
+
+<div class="figure">
+<p><img src="http://lod-cloud.net/versions/2007-05-01/lod-cloud.png" alt="Visualización de las conexiones y densidad de fuentes Linked Data" title="Visualización de las conexiones y densidad de fuentes Linked Data" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Visualización de las conexiones y densidad de fuentes Linked Data</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb84cebc">
+<h3 id="orgb84cebc">Linked Data 2017</h3>
+
+<div class="figure">
+<p><img src="http://lod-cloud.net/versions/2017-08-22/lod1000x822.png" alt="Visualización de las conexiones y densidad de fuentes Linked Data" title="Visualización de las conexiones y densidad de fuentes Linked Data" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Visualización de las conexiones y densidad de fuentes Linked Data</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org0533269">
+<h2 id="org0533269">Linked Data Sorces</h2>
+<div class="outline-text-2" id="text-org0533269">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgba4f83f">
+<h3 id="orgba4f83f">Newsrooms</h3>
+<ul>
+<li><a href="https://developer.nytimes.com/">New York Times</a></li>
+<li>BBC: <a href="https://www.bbc.co.uk/music">BBC Music</a>, <a href="https://www.bbc.co.uk/programmes">BBC Programmes</a>, <a href="http://www.bbc.co.uk/nature/animals/">BBC Nature</a>, etc.</li>
+<li><a href="http://open-platform.theguardian.com/">The Guardian</a></li>
+<li><a href="https://elpais.com/tag/listado/">El País</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org39a019f">
+<h3 id="org39a019f">Recursos</h3>
+<ul>
+<li><a href="https://wikipedia.org">Wikipedia</a></li>
+<li><a href="https://dbpedia.org">DBpedia</a></li>
+<li><a href="https://wikidata.org">Wikidata</a></li>
+<li><a href="https://musicbrainz.org/">MusicBrainz</a></li>
+<li><a href="https://openglam.org/">OpenGLAM</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0d94c00">
+<h2 id="org0d94c00">¿Es factible?</h2>
+
+<div class="figure">
+<p><img src="http://www.informationr.net/ir/18-1/p570fig01.jpg" alt="Ubicación de la web semántica en el ciclo de vida de la adopción de tecnologías" title="Ubicación de la web semántica en el ciclo de vida de la adopción de tecnologías" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Ubicación de la web semántica en el ciclo de vida de la adopción de tecnologías. Fuente: Adaptación de figura de Ivan Herman (2011), <a href="http://www.informationr.net/ir/18-1/paper570.html">http://www.informationr.net/ir/18-1/paper570.html</a></p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<p> Creado por adolflow. </p>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

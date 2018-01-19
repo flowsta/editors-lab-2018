@@ -1,0 +1,134 @@
+#+BLOG: blog.datalab.es
+#+CATEGORY: periodismodatos, ddj
+#+TAGS: 
+#+DESCRIPTION: 
+#+AUTHOR: Adolfo Antón Bravo
+#+EMAIL: adolfo@medialab-prado.es
+#+TITLE: Editors Lab 2018: Breaking News Contest
+#+DATE: <2018-01-18 jue>
+#+OPTIONS:  num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+TOC: headlines 2
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \addto\captionsenglish{\renewcommand{\contentsname}{{\'I}ndice}}
+#+LATEX_HEADER: \renewcommand{\contentsname}{Índice}
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: linear
+#+REVEAL_THEME: sky
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Herramientas de Scraping de PDF y Web.">
+#+REVEAL_POSTAMBLE: <p> Creado por adolflow. </p>
+#+REVEAL_PLUGINS: (highlight notes)
+#+REVEAL_EXTRA_CSS: file:///home/flow/Documentos/software/reveal.js/css/reveal.css
+#+REVEAL_ROOT: file:///home/flow/Documentos/software/reveal.js/
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+LATEX_HEADER: \maketitle
+#+LATEX_HEADER: \tableofcontents
+
+* Intro
+- Estamos 11 equipos provenientes de medios o entidades que trabajamos con tecnologías de la información, con
+  periodismo.
+- Pretendemos montar un prototipo periodístico innovador, seguro que todos son interesantes.
+- El nuestro lo es...
+- Se trata de una nueva tecnología disruptiva recién inventada: los datos vinculados.
+
+* ¿Recién?
+
+* Quiénes somos
+
+- Alejandro Zappala, cartógrafo, topógrafo, adappgeo.net
+- María Poveda, ingeniera ontológica, ODI Madrid (Open Data Institute) y OEG-UPM.
+- Adolfo Antón Bravo, responsable del DataLab Madrid.
+
+* Qué queremos hacer
+
+Poner en contexto, de forma automática, aumentada, semántica, geográfica y enriquecida una noticia cualquiera.
+
+* ¿Recieeeeeén? ¿Cómo?
+
+- NLP, Procesado de Lenguaje Natural (/Natural Language Processing/).
+- ER, Reconocimiento de entidades (/Entity Recognition/).
+- LOD, reconciliación con datos abiertos vinculados (/Linked Open Data/).
+- JSON-LD, para la Web.
+- GIS, sistemas de información geográfica (/GeoJSON/, /PostGIS/)
+
+* The Breaking News Challenge
+
+En el libro [[https://books.google.es/books?id=EvoBmQcEVZAC][Excellence in Online Journalism]]: Exploring Current Practices in an Evolving Environment, David
+A. Craig recordaba:
+
+#+BEGIN_QUOTE
+Breaking news always stretches reporters and editors, no matter the medium, because of the time constraints it
+creates.
+
+In online journalism, the pressure to move quickly is particularly intense and therefore the challenges to
+excellence are great.
+#+END_QUOTE
+
+* ¿Esto es un problema actual?
+
+#+BEGIN_QUOTE
+From the early days of journalism on the web in the 1990s, the capacity of the medium for speed created new
+possibilities but also new expectations.
+
+In the past few yearse, the proliferation of independent blogs and
+news sites, along withe the development of social media such as Twitter, has provided even greater capacity
+for quick communication but also intensified what was already a brutal competitive battle in online news.
+
+The battle we are facing in trying to report and edit quickly and accurately and to go beyond basic accuracy
+to provide context and depth.
+#+END_QUOTE
+
+* Linked Open Data
+
+Los Datos Enlazados son una parte de la Web Semántica:
+- Usar URIs para identificar las cosas, entidades, abstracciones de distintos nombres que con lenguaje natural
+  se refieren a un mismo recurso.así ofrecer una forma estandar y unívoca para refererirnos a cualquier recurso. 
+- Usar URIs HTTP, para acceder.
+- Ofrecer información sobre los recursos usando RDF, para aprovechar su potencia: triplas del tipo =Sujeto, Propiedad, Valor=
+  (Sujeto, Predicado, Objeto)
+- Incluir enlaces a otros URIs, para enlazar URIs.
+
+* Nube de Datos Enlazados
+
+- Este grafo representa a distintos conjuntos de datos de diversos tipos
+- Están organizados mediante colores por dominios.
+- Estos conjuntos de datos están conectados entre sí
+
+** Linked Data 2007
+
+#+CAPTION: Visualización de las conexiones y densidad de fuentes Linked Data 
+#+ATTR_HTML: :alt Visualización de las conexiones y densidad de fuentes Linked Data  :title Visualización de las conexiones y densidad de fuentes Linked Data 
+http://lod-cloud.net/versions/2007-05-01/lod-cloud.png
+
+** Linked Data 2017
+
+#+CAPTION: Visualización de las conexiones y densidad de fuentes Linked Data 
+#+ATTR_HTML: :alt Visualización de las conexiones y densidad de fuentes Linked Data  :title Visualización de las conexiones y densidad de fuentes Linked Data 
+http://lod-cloud.net/versions/2017-08-22/lod1000x822.png
+
+* Linked Data Sorces
+
+** Newsrooms
+
+- [[https://developer.nytimes.com/][New York Times]]
+- BBC: [[https://www.bbc.co.uk/music][BBC Music]], [[https://www.bbc.co.uk/programmes][BBC Programmes]], [[http://www.bbc.co.uk/nature/animals/][BBC Nature]], etc.
+- [[http://open-platform.theguardian.com/][The Guardian]]
+- [[https://elpais.com/tag/listado/][El País]]
+
+** Recursos
+- [[https://wikipedia.org][Wikipedia]]
+- [[https://dbpedia.org][DBpedia]]
+- [[https://wikidata.org][Wikidata]]
+- [[https://musicbrainz.org/][MusicBrainz]]
+- [[https://openglam.org/][OpenGLAM]]
+
+* ¿Es factible?
+
+#+CAPTION: Ubicación de la web semántica en el ciclo de vida de la adopción de tecnologías. Fuente: Adaptación de figura de Ivan Herman (2011), http://www.informationr.net/ir/18-1/paper570.html
+#+ATTR_HTML: :alt Ubicación de la web semántica en el ciclo de vida de la adopción de tecnologías   :title Ubicación de la web semántica en el ciclo de vida de la adopción de tecnologías
+http://www.informationr.net/ir/18-1/p570fig01.jpg
